@@ -1,0 +1,33 @@
+<%
+  def image_style
+    [].tap do |style|
+      style << "width: #{object.image_width}px" if object.image_width
+      style << "height: #{object.image_height}px" if object.image_height
+    end.join(';')
+  end
+
+  def image_cell_style
+    ['padding-right: 5px'].tap do |style|
+      style << "width: #{object.image_width}px" if object.image_width && object.image
+    end.join(';')
+  end
+%>
+
+<table class="banner">
+  <tbody>
+    <tr>
+      <% if object.image -%>
+        <td style="<%= image_cell_style -%>">
+          <img style="<%= image_style -%>" src="data:image/jpeg;charset=utf-8;base64,<%= Base64.encode64(object.image.read) -%>" />
+        </td>
+      <% end -%>
+      <td>
+        <% if !object.title.empty? -%>
+          <strong><%= object.title -%></strong>
+          <br>
+        <% end -%>
+        <%= object.details -%>
+      </td>
+    </tr>
+  </tbody>
+</table>

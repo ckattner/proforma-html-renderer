@@ -1,0 +1,42 @@
+<%
+  def cell_style(cell)
+    [].tap do |styles|
+      styles << "text-align: #{cell.align}" if !cell.align.to_s.empty?
+      styles << "width: #{cell.width}%"      if cell.width
+    end.join(';')
+  end
+%>
+
+<% if object.body.rows.any? -%>
+  <table class="table">
+    <thead>
+      <% object.header.rows.each do |row| -%>
+        <tr>
+          <% row.cells.each do |cell| -%>
+            <th style="<%= cell_style(cell) %>"><%= cell.text %></th>
+          <% end -%>
+        </tr>
+      <% end -%>
+    </thead>
+    <tbody>
+      <% object.body.rows.each do |row| -%>
+        <tr>
+          <% row.cells.each do |cell| -%>
+            <td style="<%= cell_style(cell) %>"><%= cell.text %></td>
+          <% end -%>
+        </tr>
+      <% end -%>
+    </tbody>
+    <tfoot>
+      <% object.footer.rows.each do |row| -%>
+        <tr>
+          <% row.cells.each do |cell| -%>
+            <td style="<%= cell_style(cell) %>"><%= cell.text %></td>
+          <% end -%>
+        </tr>
+      <% end -%>
+    </tfoot>
+  </table>
+<% elsif !object.empty_message.to_s.empty? -%>
+  <p><%= object.empty_message %></p>
+<% end -%>

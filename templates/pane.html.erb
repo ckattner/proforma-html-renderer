@@ -1,0 +1,36 @@
+<%
+  col_count = object.columns&.length || 0
+  row_count = object.columns&.map { |c| c.lines.length }&.max || 0
+
+  def label_cell_style(column)
+    return unless column
+
+    ["font-weight: #{options.bold_weight}"].tap do |styles|
+      styles << "width: #{column.label_width}%" if column.label_width
+    end.join(';')
+  end
+
+  def value_cell_style(column)
+    return unless column
+
+    [].tap do |styles|
+      styles << "text-align: #{column.align}"   if !column.align.to_s.empty?
+      styles << "width: #{column.value_width}%" if column.value_width
+    end.join(';')
+  end
+%>
+
+<table class="pane">
+  <tbody>
+    <% (0...row_count).each do |row_index| -%>
+      <tr>
+        <% (0...col_count).each do |col_index| -%>
+          <% column = object.columns[col_index] -%>
+          <% line = column&.lines[row_index] -%>
+          <td style="<%= label_cell_style(column) -%>"><%= line&.label %></td>
+          <td style="<%= value_cell_style(column) -%>"><%= line&.value %></td>
+        <% end -%>
+      <tr>
+    <% end -%>
+  </tbody>
+</table>

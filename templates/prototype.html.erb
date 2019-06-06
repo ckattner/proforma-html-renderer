@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: <%= options.font_family %>;
+        font-size: <%= options.text_font_size %>px;
+        line-height: <%= options.text_font_size + options.line_height_increase %>px;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+      }
+
+      strong {
+        font-weight: <%= options.bold_weight %>;
+      }
+
+      p, h1, table {
+        margin: 8px 0;
+      }
+
+      hr {
+        border-top: 1px solid black;
+      }
+
+      h1 {
+        font-size: <%= options.header_font_size %>px;
+        font-weight: <%= options.bold_weight %>;
+      }
+
+      body {
+        margin: 15px;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+      }
+
+      td, th {
+        vertical-align: top;
+        text-align: left;
+        padding: 5px;
+      }
+
+      table.table th {
+        border-bottom: 1px solid black;
+      }
+
+      table.table tbody td {
+        border-bottom: 1px solid black;
+      }
+
+      table.table tfoot td, table.table th {
+        background-color: #D3D3D3;
+        font-weight: <%= options.bold_weight %>;
+      }
+
+      table.pane td, table.pane th {
+        padding: 5px 5px 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <% object.children.each do |child| -%>
+      <%= ProformaWriter.render(child, options) %>
+    <% end -%>
+  </body>
+</html>

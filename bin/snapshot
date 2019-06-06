@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+#
+# Copyright (c) 2019-present, Blue Marble Payroll, LLC
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+#
+
+# This script will generate the snapshot to be used for testing.
+# After modifying any internal part that changes the rendered HTML output
+# you should manually verify the output and once satisfied, use this script to
+# regenerate the snapshot.
+
+require 'bundler/setup'
+require 'pry'
+
+require_relative '../spec/rendering_helper'
+
+snapshot_dir = File.join(__dir__, '..', 'spec', 'fixtures', 'snapshot')
+
+RenderingHelper.new(snapshot_dir).render_and_save
