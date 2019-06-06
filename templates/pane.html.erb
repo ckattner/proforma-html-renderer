@@ -10,10 +10,12 @@
     end.join(';')
   end
 
-  def value_cell_style(column)
+  def value_cell_style(column, last)
     return unless column
 
-    [].tap do |styles|
+    right_padding = last ? 0 : 20
+
+    ["padding-right: #{right_padding}px"].tap do |styles|
       styles << "text-align: #{column.align}"   if !column.align.to_s.empty?
       styles << "width: #{column.value_width}%" if column.value_width
     end.join(';')
@@ -28,7 +30,7 @@
           <% column = object.columns[col_index] -%>
           <% line = column&.lines[row_index] -%>
           <td style="<%= label_cell_style(column) -%>"><%= line&.label %></td>
-          <td style="<%= value_cell_style(column) -%>"><%= line&.value %></td>
+          <td style="<%= value_cell_style(column, col_index >= col_count-1) -%>"><%= line&.value %></td>
         <% end -%>
       <tr>
     <% end -%>

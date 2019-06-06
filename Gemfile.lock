@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    proforma-html-renderer (1.0.0)
+    proforma-html-renderer (1.0.1)
       proforma (~> 1)
 
 GEM
