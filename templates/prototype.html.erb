@@ -3,8 +3,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <style>
-      * {
+    <style title="Basic Payslip Styles">
+      body {
+        margin: 15px;
+      }
+
+      .payslip-view * {
         box-sizing: border-box;
         font-family: <%= options.font_family %>;
         font-size: <%= options.text_font_size %>px;
@@ -14,60 +18,63 @@
         padding: 0;
       }
 
-      strong {
+      .payslip-view strong {
         font-weight: <%= options.bold_weight %>;
       }
 
-      p, h1, table {
+      .payslip-view p,
+      .payslip-view h1,
+      .payslip-view table {
         margin: 8px 0;
       }
 
-      hr {
+      .payslip-view hr {
         border-top: 1px solid black;
       }
 
-      h1 {
+      .payslip-view h1 {
         font-size: <%= options.header_font_size %>px;
         font-weight: <%= options.bold_weight %>;
       }
 
-      body {
-        margin: 15px;
-      }
-
-      table {
+      .payslip-view table {
         border-collapse: collapse;
         border-spacing: 0;
         width: 100%;
       }
 
-      td, th {
+      .payslip-view td,
+      .payslip-view th {
         vertical-align: top;
         text-align: left;
         padding: 5px;
       }
 
-      table.table th {
+      .payslip-view table.table th {
         border-bottom: 1px solid black;
       }
 
-      table.table tbody td {
+      .payslip-view table.table tbody td {
         border-bottom: 1px solid black;
       }
 
-      table.table tfoot td, table.table th {
+      .payslip-view table.table tfoot td,
+      .payslip-view table.table th {
         background-color: #D3D3D3;
         font-weight: <%= options.bold_weight %>;
       }
 
-      table.pane td, table.pane th {
+      .payslip-view table.pane td,
+      .payslip-view table.pane th {
         padding: 5px 5px 5px 0;
       }
     </style>
   </head>
   <body>
-    <% object.children.each do |child| -%>
-      <%= ProformaWriter.render(child, options) %>
-    <% end -%>
+    <div class="payslip-view">
+      <% object.children.each do |child| -%>
+        <%= ProformaWriter.render(child, options) %>
+      <% end -%>
+    </div>
   </body>
 </html>

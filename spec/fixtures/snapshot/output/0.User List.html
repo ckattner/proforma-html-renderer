@@ -3,8 +3,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <style>
-      * {
+    <style title="Basic Payslip Styles">
+      body {
+        margin: 15px;
+      }
+
+      .payslip-view * {
         box-sizing: border-box;
         font-family: sans-serif;
         font-size: 13px;
@@ -14,59 +18,61 @@
         padding: 0;
       }
 
-      strong {
+      .payslip-view strong {
         font-weight: bold;
       }
 
-      p, h1, table {
+      .payslip-view p,
+      .payslip-view h1,
+      .payslip-view table {
         margin: 8px 0;
       }
 
-      hr {
+      .payslip-view hr {
         border-top: 1px solid black;
       }
 
-      h1 {
+      .payslip-view h1 {
         font-size: 18px;
         font-weight: bold;
       }
 
-      body {
-        margin: 15px;
-      }
-
-      table {
+      .payslip-view table {
         border-collapse: collapse;
         border-spacing: 0;
         width: 100%;
       }
 
-      td, th {
+      .payslip-view td,
+      .payslip-view th {
         vertical-align: top;
         text-align: left;
         padding: 5px;
       }
 
-      table.table th {
+      .payslip-view table.table th {
         border-bottom: 1px solid black;
       }
 
-      table.table tbody td {
+      .payslip-view table.table tbody td {
         border-bottom: 1px solid black;
       }
 
-      table.table tfoot td, table.table th {
+      .payslip-view table.table tfoot td,
+      .payslip-view table.table th {
         background-color: #D3D3D3;
         font-weight: bold;
       }
 
-      table.pane td, table.pane th {
+      .payslip-view table.pane td,
+      .payslip-view table.pane th {
         padding: 5px 5px 5px 0;
       }
     </style>
   </head>
   <body>
-          
+    <div class="payslip-view">
+              
 
 <table class="banner">
   <tbody>
@@ -1764,14 +1770,14 @@ Chicago, IL 62626
     </tr>
   </tbody>
 </table>
-          <br>
-            <h1>User List</h1>
+              <br>
+                <h1>User List</h1>
 
-          <hr>
-            <p>The following is a list of users</p>
+              <hr>
+                <p>The following is a list of users</p>
 
-          <br>
-          
+              <br>
+              
 
   <table class="table">
     <thead>
@@ -1817,11 +1823,11 @@ Chicago, IL 62626
           </tfoot>
   </table>
 
-          <br>
-            <h1>User Details</h1>
+              <br>
+                <h1>User Details</h1>
 
-          <hr>
-          
+              <hr>
+              
 
 <table class="pane">
   <tbody>
@@ -1839,10 +1845,10 @@ Chicago, IL 62626
               <tr>
       </tbody>
 </table>
-          <br>
-            <h1>Phone Numbers</h1>
+              <br>
+                <h1>Phone Numbers</h1>
 
-          
+              
 
   <table class="table">
     <thead>
@@ -1865,12 +1871,12 @@ Chicago, IL 62626
           </tfoot>
   </table>
 
-          <br>
-          <br>
-            <h1>User Details</h1>
+              <br>
+              <br>
+                <h1>User Details</h1>
 
-          <hr>
-          
+              <hr>
+              
 
 <table class="pane">
   <tbody>
@@ -1888,10 +1894,10 @@ Chicago, IL 62626
               <tr>
       </tbody>
 </table>
-          <br>
-            <h1>Phone Numbers</h1>
+              <br>
+                <h1>Phone Numbers</h1>
 
-          
+              
 
   <table class="table">
     <thead>
@@ -1910,12 +1916,12 @@ Chicago, IL 62626
           </tfoot>
   </table>
 
-          <br>
-          <br>
-            <h1>User Details</h1>
+              <br>
+              <br>
+                <h1>User Details</h1>
 
-          <hr>
-          
+              <hr>
+              
 
 <table class="pane">
   <tbody>
@@ -1933,11 +1939,12 @@ Chicago, IL 62626
               <tr>
       </tbody>
 </table>
-          <br>
-            <h1>Phone Numbers</h1>
+              <br>
+                <h1>Phone Numbers</h1>
 
-            <p>No phone numbers.</p>
+                <p>No phone numbers.</p>
 
-          <br>
-      </body>
+              <br>
+          </div>
+  </body>
 </html>

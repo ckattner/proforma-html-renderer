@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    proforma-html-renderer (1.0.1)
+    proforma-html-renderer (1.0.2)
       proforma (~> 1)
 
 GEM
@@ -109,3 +109,6 @@ DEPENDENCIES
   rubocop (~> 0.63.1)
   simplecov (~> 0.16.1)
   simplecov-console (~> 0.4.2)
+
+BUNDLED WITH
+   2.0.1
