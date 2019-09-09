@@ -101,3 +101,12 @@ template:
         - header: Number
           body: $number
       - type: Spacer
+      - type: Header
+        value: Table with no rows and no empty message test
+      - type: DataTable
+        property: doesnt_exist
+        columns:
+        - header: Type
+          body: $type
+        - header: Number
+          body: $number
