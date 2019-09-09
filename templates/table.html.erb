@@ -7,34 +7,32 @@
   end
 %>
 
-<% if object.body.rows.any? -%>
-  <table class="table">
-    <thead>
-      <% object.header.rows.each do |row| -%>
-        <tr>
-          <% row.cells.each do |cell| -%>
-            <th style="<%= cell_style(cell) %>"><%= cell.text %></th>
-          <% end -%>
-        </tr>
-      <% end -%>
-    </thead>
-    <tbody>
-      <% object.body.rows.each do |row| -%>
-        <tr>
-          <% row.cells.each do |cell| -%>
-            <td style="<%= cell_style(cell) %>"><%= cell.text %></td>
-          <% end -%>
-        </tr>
-      <% end -%>
-    </tbody>
-    <tfoot>
-      <% object.footer.rows.each do |row| -%>
-        <tr>
-          <% row.cells.each do |cell| -%>
-            <td style="<%= cell_style(cell) %>"><%= cell.text %></td>
-          <% end -%>
-        </tr>
-      <% end -%>
-    </tfoot>
-  </table>
-<% end -%>
+<table class="table">
+  <thead>
+    <% object.header.rows.each do |row| -%>
+      <tr>
+        <% row.cells.each do |cell| -%>
+          <th style="<%= cell_style(cell) %>"><%= cell.text %></th>
+        <% end -%>
+      </tr>
+    <% end -%>
+  </thead>
+  <tbody>
+    <% object.body.rows.each do |row| -%>
+      <tr>
+        <% row.cells.each do |cell| -%>
+          <td style="<%= cell_style(cell) %>"><%= cell.text %></td>
+        <% end -%>
+      </tr>
+    <% end -%>
+  </tbody>
+  <tfoot>
+    <% object.footer.rows.each do |row| -%>
+      <tr>
+        <% row.cells.each do |cell| -%>
+          <td style="<%= cell_style(cell) %>"><%= cell.text %></td>
+        <% end -%>
+      </tr>
+    <% end -%>
+  </tfoot>
+</table>

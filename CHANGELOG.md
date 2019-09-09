@@ -1,4 +1,10 @@
-# 1.0.3 (September  9th, 2019)
+# 1.0.4 (September 9th, 2019)
+
+#### Fixes
+
+* A table should always be rendered, even if it has no rows.  This puts this library's table rendering on par with proforma-pdf-renderer, where it renders empty tables as well.
+
+# 1.0.3 (September 9th, 2019)
 
 #### Fixes
 
