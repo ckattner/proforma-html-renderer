@@ -9,7 +9,6 @@
 
 require 'fileutils'
 require 'pry'
-require 'pry-byebug'
 require 'yaml'
 
 unless ENV['DISABLE_SIMPLECOV'] == 'true'
